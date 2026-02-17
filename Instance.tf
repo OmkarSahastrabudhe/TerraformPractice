@@ -26,8 +26,8 @@ resource "aws_instance" "my-instance" {
 
      provisioner "remote-exec"{
          
-         inline =["apt update -y","apt install apache2 -y",
-         "systemctl --now enable apache2"]      
+         inline =["sudo apt update -y","sudo apt install apache2 -y",
+         "sudo systemctl --now enable apache2"]      
 
      }
 
