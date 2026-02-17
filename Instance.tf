@@ -31,7 +31,7 @@ resource "aws_instance" "my-instance" {
 
      provisioner "remote-exec"{
          
-         inline =["sudo mv /home/ubuntu/my-static-website/  /var/www/html/","sudo apt update -y","sudo apt install apache2 -y",
+         inline = ["sudo mv /home/ubuntu/my-static-website/  /var/www/html/","sudo apt update -y","sudo apt install apache2 -y",
          "sudo systemctl --now enable apache2"]
               
 
