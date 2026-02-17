@@ -20,20 +20,23 @@ resource "aws_instance" "my-instance" {
         type = "ssh"
         host = self.public_ip
         user = "ubuntu"
-        private_key = file("./superkey.pem")
+        private_key = file("/home/ubuntu/superkey.pem")
 
      } 
+
+      provisioner "file"{
+         source = "/home/ubuntu/my-static-website"
+         destination = "/home/ubuntu/my-static-website"
+     }
 
      provisioner "remote-exec"{
          
          inline =["sudo apt update -y","sudo apt install apache2 -y",
-         "sudo systemctl --now enable apache2"]      
+         "sudo systemctl --now enable apache2",
+         "sudo mv /home/ubuntu/my-static-website/  /var/www/html/"]      
 
      }
 
-     provisioner "file"{
-         source = "./my-static-website/"
-         destination = "/var/www/html/"
-     }
+    
   
 }
