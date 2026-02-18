@@ -7,10 +7,7 @@ resource "aws_s3_bucket" "my-bucket" {
     
   
 }
-resource "aws_s3_bucket_acl" "exposingBucketAcl" {
-    bucket = aws_s3_bucket.my-bucket.bucket
-    acl = "public-read"
-}
+
 
 resource "aws_s3_object" "mys3Obj" {
   for_each = fileset("/home/ubuntu/static-website", "**")
