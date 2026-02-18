@@ -12,7 +12,7 @@ resource "aws_s3_bucket_acl" "exposingBucketAcl" {
     acl = "public-read"
 }
 
-resource "aws_s3_bucket_object" "mys3Obj" {
+resource "aws_s3_object" "mys3Obj" {
   for_each = fileset("/home/ubuntu/static-website", "**")
   bucket = aws_s3_bucket.my-bucket.bucket
   key = each.value

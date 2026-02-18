@@ -56,8 +56,7 @@ resource "aws_iam_user" "practiceUsers" {
 resource "aws_iam_user_login_profile" "consoleLogin" {
 
     user = aws_iam_user.practiceUsers.name
-    password = "mySimplePassword@123"
-    password_reset_required = false
+  
   
 }
 resource "aws_iam_access_key" "practiceKey" {
