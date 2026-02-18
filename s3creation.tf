@@ -1,7 +1,7 @@
 
 
 resource "aws_s3_bucket" "my-bucket" {
-    bucket = "my-working-bucket"
+    bucket = "my-work-buck-cdecb40"
 
     
     
