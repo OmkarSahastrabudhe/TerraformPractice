@@ -14,7 +14,7 @@ resource "aws_s3_object" "mys3Obj" {
   bucket = aws_s3_bucket.my-bucket.bucket
   key = each.value
    source = "/home/ubuntu/static-website/${each.value}"
-  acl    = "public-read"
+  
 
 
   
